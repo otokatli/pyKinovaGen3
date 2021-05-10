@@ -4,6 +4,7 @@ from .jacobian import jacobian
 from .gravity import gravity
 from .mass_matrix import mass_matrix
 from .coriolis import coriolis
+from numpy.linalg import inv
 
 
 class KinovaGen3:
@@ -28,3 +29,5 @@ class KinovaGen3:
     def gravity(self, q):
         return gravity(q)
     
+    def manipulability(self, q):
+        return inv(self.jacobian(q) @ self.jacobian(q).transpose())
