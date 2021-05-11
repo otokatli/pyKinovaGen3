@@ -1,4 +1,5 @@
 import numpy
+from .jacobian import jacobian
 
 def inverse_kinematics(q, xp):
     '''
