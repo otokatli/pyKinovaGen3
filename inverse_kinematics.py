@@ -1,6 +1,6 @@
 import numpy
 
-def inverse_kinematics(q, qp):
+def inverse_kinematics(q, xp):
     '''
     Velocity level inverse kinematics of the Kinova Gen3 robot
     
@@ -8,13 +8,13 @@ def inverse_kinematics(q, qp):
     ---------
     q : array_like
         The joint angles of the robot
-    qp : array_like
-         The joint velocities of the robot
+    xp : array_like
+         The end-effector velocities of the robot
         
     Returns
     -------
     ndarray
-        The end-effector velocity
+        The joint velocities
     '''
     
-    return numpy.linalg.pinv(jacobian(q)) @ qp
+    return numpy.linalg.pinv(jacobian(q)) @ xp
