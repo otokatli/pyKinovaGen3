@@ -5,3 +5,5 @@ from .gravity import gravity
 from .mass_matrix import mass_matrix
 from .coriolis import coriolis
 from .manipulability import manipulability
+from .com_positions import com_positions
+from .mid_positions import mid_positions
