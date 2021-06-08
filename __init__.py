@@ -7,3 +7,4 @@ from .coriolis import coriolis
 from .manipulability import manipulability
 from .com_positions import com_positions
 from .mid_positions import mid_positions
+from .joint_positions import joint_positions
