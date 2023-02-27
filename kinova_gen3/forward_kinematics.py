@@ -1,84 +1,116 @@
-from numpy import array, cos, sin
+"""Position level forward kinematics for Kinova Gen3
+
+Functions
+---------
+forward_kinematics(joint_position)
+
+"""
+
+import math
+import numpy as np
 
 
-def forward_kinematics(q):
-    '''
-    Forward kinematics of the Kinova Gen3 robot
-    
+def forward_kinematics(joint_position):
+    """
+    Position level forward kinematics of the Kinova Gen3 robot
+
     Arguments
     ---------
-    q : array_like
-        The joint angles of the robot
-        
+    joint_position (array_like): The joint angles of the robot
+
     Returns
     -------
-    ndarray
-        The end-effector position
-    ndarray
-        The rotation matrix of the end-effector
-    '''
-    
-    q1 = q[0]
-    q2 = q[1]
-    q3 = q[2]
-    q4 = q[3]
-    q5 = q[4]
-    q6 = q[5]
-    q7 = q[6]
-    
-    x0 = sin(q1)
-    x1 = cos(q3)
-    x2 = x0*x1
-    x3 = cos(q1)
-    x4 = sin(q2)
-    x5 = x3*x4
-    x6 = cos(q4)
-    x7 = x5*x6
-    x8 = cos(q2)
-    x9 = sin(q3)
-    x10 = x3*x9
-    x11 = x10*x8
-    x12 = sin(q4)
-    x13 = x0*x9
-    x14 = x1*x3
-    x15 = -x13 + x14*x8
-    x16 = x12*x15
-    x17 = cos(q6)
-    x18 = -x16 - x7
-    x19 = x17*x18
-    x20 = sin(q6)
-    x21 = sin(q5)
-    x22 = x11 + x2
-    x23 = cos(q5)
-    x24 = -x12*x5 + x15*x6
-    x25 = -x21*x22 + x23*x24
-    x26 = x20*x25
-    x27 = x0*x4
-    x28 = x27*x6
-    x29 = x13*x8
-    x30 = -x10 - x2*x8
-    x31 = x12*x30
-    x32 = x28 - x31
-    x33 = x17*x32
-    x34 = x14 - x29
-    x35 = x12*x27 + x30*x6
-    x36 = -x21*x34 + x23*x35
-    x37 = x20*x36
-    x38 = x4*x9
-    x39 = x6*x8
-    x40 = x1*x4
-    x41 = x12*x40
-    x42 = -x39 + x41
-    x43 = x17*x42
-    x44 = -x12*x8 - x40*x6
-    x45 = x21*x38 + x23*x44
-    x46 = x20*x45
-    x47 = sin(q7)
-    x48 = x21*x24 + x22*x23
-    x49 = cos(q7)
-    x50 = x17*x25 + x18*x20
-    x51 = x21*x35 + x23*x34
-    x52 = x17*x36 + x20*x32
-    x53 = x21*x44 - x23*x38
-    x54 = x17*x45 + x20*x42
-    return array([-0.0118*x0 - 0.0128*x11 + 0.3143*x16 - 0.1674*x19 - 0.0128*x2 + 0.1674*x26 + 0.4208*x5 + 0.3143*x7, -0.0128*x14 - 0.4208*x27 - 0.3143*x28 + 0.0128*x29 - 0.0118*x3 + 0.3143*x31 - 0.1674*x33 + 0.1674*x37, 0.0128*x38 + 0.3143*x39 - 0.3143*x41 - 0.1674*x43 + 0.1674*x46 + 0.4208*x8 + 0.2848]), array([[-x47*x48 + x49*x50, x47*x50 + x48*x49, -x19 + x26], [-x47*x51 + x49*x52, x47*x52 + x49*x51, -x33 + x37], [-x47*x53 + x49*x54, x47*x54 + x49*x53, -x43 + x46]])
+    ndarray: The end-effector position
+    ndarray: The rotation matrix of the end-effector
+
+    """
+
+    x_0 = math.sin(joint_position[0])
+    x_1 = math.cos(joint_position[2])
+    x_2 = x_0 * x_1
+    x_3 = math.cos(joint_position[0])
+    x_4 = math.sin(joint_position[1])
+    x_5 = x_3 * x_4
+    x_6 = math.cos(joint_position[3])
+    x_7 = x_5 * x_6
+    x_8 = math.cos(joint_position[1])
+    x_9 = math.sin(joint_position[2])
+    x_10 = x_3 * x_9
+    x_11 = x_10 * x_8
+    x_12 = math.sin(joint_position[3])
+    x_13 = x_0 * x_9
+    x_14 = x_1 * x_3
+    x_15 = -x_13 + x_14 * x_8
+    x_16 = x_12 * x_15
+    x_17 = math.cos(joint_position[5])
+    x_18 = -x_16 - x_7
+    x_19 = x_17 * x_18
+    x_20 = math.sin(joint_position[5])
+    x_21 = math.sin(joint_position[4])
+    x_22 = x_11 + x_2
+    x_23 = math.cos(joint_position[4])
+    x_24 = -x_12 * x_5 + x_15 * x_6
+    x_25 = -x_21 * x_22 + x_23 * x_24
+    x_26 = x_20 * x_25
+    x_27 = x_0 * x_4
+    x_28 = x_27 * x_6
+    x_29 = x_13 * x_8
+    x_30 = -x_10 - x_2 * x_8
+    x_31 = x_12 * x_30
+    x_32 = x_28 - x_31
+    x_33 = x_17 * x_32
+    x_34 = x_14 - x_29
+    x_35 = x_12 * x_27 + x_30 * x_6
+    x_36 = -x_21 * x_34 + x_23 * x_35
+    x_37 = x_20 * x_36
+    x_38 = x_4 * x_9
+    x_39 = x_6 * x_8
+    x_40 = x_1 * x_4
+    x_41 = x_12 * x_40
+    x_42 = -x_39 + x_41
+    x_43 = x_17 * x_42
+    x_44 = -x_12 * x_8 - x_40 * x_6
+    x_45 = x_21 * x_38 + x_23 * x_44
+    x_46 = x_20 * x_45
+    x_47 = math.sin(joint_position[6])
+    x_48 = x_21 * x_24 + x_22 * x_23
+    x_49 = math.cos(joint_position[6])
+    x_50 = x_17 * x_25 + x_18 * x_20
+    x_51 = x_21 * x_35 + x_23 * x_34
+    x_52 = x_17 * x_36 + x_20 * x_32
+    x_53 = x_21 * x_44 - x_23 * x_38
+    x_54 = x_17 * x_45 + x_20 * x_42
+
+    return np.array(
+        [
+            -0.0118 * x_0
+            - 0.0128 * x_11
+            + 0.3143 * x_16
+            - 0.1674 * x_19
+            - 0.0128 * x_2
+            + 0.1674 * x_26
+            + 0.4208 * x_5
+            + 0.3143 * x_7,
+            -0.0128 * x_14
+            - 0.4208 * x_27
+            - 0.3143 * x_28
+            + 0.0128 * x_29
+            - 0.0118 * x_3
+            + 0.3143 * x_31
+            - 0.1674 * x_33
+            + 0.1674 * x_37,
+            0.0128 * x_38
+            + 0.3143 * x_39
+            - 0.3143 * x_41
+            - 0.1674 * x_43
+            + 0.1674 * x_46
+            + 0.4208 * x_8
+            + 0.2848,
+        ]
+    ), np.array(
+        [
+            [-x_47 * x_48 + x_49 * x_50, x_47 * x_50 + x_48 * x_49, -x_19 + x_26],
+            [-x_47 * x_51 + x_49 * x_52, x_47 * x_52 + x_49 * x_51, -x_33 + x_37],
+            [-x_47 * x_53 + x_49 * x_54, x_47 * x_54 + x_49 * x_53, -x_43 + x_46],
+        ]
+    )
