@@ -1,0 +1,21 @@
+[project]
+name = "pyKinovaGen3"
+version = "0.0.1"
+authors = [
+  { name="Ozan Tokatli", email="ozan.tokatli@gmail.com" },
+]
+description = "Python package for the kinematics and dynamics of Kinova Gen3"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pypa/sampleproject"
+"Documentation" = "https://pykinovagen3.readthedocs.io"
+"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
