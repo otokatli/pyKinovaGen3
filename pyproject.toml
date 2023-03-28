@@ -1,6 +1,6 @@
 [project]
 name = "pyKinovaGen3"
-version = "0.0.2"
+version = "0.0.3"
 authors = [
   { name="Ozan Tokatli", email="ozan.tokatli@gmail.com" },
 ]
@@ -13,6 +13,9 @@ classifiers = [
     "Operating System :: OS Independent",
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
+]
+dependencies = [
+  'numpy',
 ]
 
 [project.urls]
