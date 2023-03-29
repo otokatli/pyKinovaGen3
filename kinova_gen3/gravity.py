@@ -179,7 +179,7 @@ def gravity(joint_position):
 
     return np.array(
         [
-            [
+            
                 gravity_acceleration
                 * (
                     0.83099584 * x_0 * x_2
@@ -269,8 +269,8 @@ def gravity(joint_position):
                         - 0.00965 * x_82
                     )
                 )
-            ],
-            [
+            ,
+            
                 gravity_acceleration
                 * (
                     1.1636 * x_1 * x_2 * (-4.4e-5 * x_5 + 0.006641 * x_7)
@@ -321,8 +321,8 @@ def gravity(joint_position):
                     - x_86
                     * (-0.045483 * x_126 + 0.00965 * x_131 + x_133 * x_5 - x_134 * x_5)
                 )
-            ],
-            [
+            ,
+            
                 gravity_acceleration
                 * (
                     0.0101029324 * x_1 * x_4 * x_5
@@ -371,8 +371,8 @@ def gravity(joint_position):
                     - x_85 * (x_142 + 0.00965 * x_64 + 0.00965 * x_67)
                     - x_86 * (0.045483 * x_141 - 0.00965 * x_144 + 0.00965 * x_77)
                 )
-            ],
-            [
+            ,
+            
                 gravity_acceleration
                 * (
                     0.45698494 * x_1 * x_19 * x_2
@@ -397,8 +397,8 @@ def gravity(joint_position):
                     - x_85 * (-x_132 + 1.0e-6 * x_39)
                     - x_86 * (-x_134 + 0.045483 * x_39)
                 )
-            ],
-            [
+            ,
+            
                 gravity_acceleration
                 * (
                     -x_108 * (-0.011402 * x_63 * x_87 - 0.000281 * x_63 * x_89)
@@ -413,8 +413,8 @@ def gravity(joint_position):
                     + 0.0065427 * x_65 * x_75
                     - x_83 * (-0.045483 * x_63 - 1.0e-6 * x_65)
                 )
-            ],
-            [
+            ,
+            
                 gravity_acceleration
                 * (
                     -x_108 * (-0.000281 * x_87 + 0.011402 * x_89)
@@ -425,8 +425,8 @@ def gravity(joint_position):
                     - 0.083787474 * x_73
                     - 0.083787474 * x_74
                 )
-            ],
-            [
+            ,
+            
                 gravity_acceleration
                 * (
                     -0.0001405 * x_109
@@ -434,6 +434,6 @@ def gravity(joint_position):
                     - 0.005701 * x_113
                     + 0.005701 * x_45 * x_89
                 )
-            ],
+            ,
         ]
     )

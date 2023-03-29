@@ -2011,7 +2011,7 @@ def coriolis(joint_position, joint_velocity):
     x_940 = x_146 * x_939
     return np.array(
         [
-            [
+            
                 -0.4208 * x_0 * x_36
                 + 0.018678
                 * x_0
@@ -2337,8 +2337,8 @@ def coriolis(joint_position, joint_velocity):
                 )
                 + x_86 * x_87
                 - x_89 * (x_12 * x_83 - x_84 * x_9 + x_85 * x_9)
-            ],
-            [
+            ,
+            
                 x_109 * x_698
                 + x_109 * x_708
                 + x_109 * x_721
@@ -2571,8 +2571,8 @@ def coriolis(joint_position, joint_velocity):
                 + x_746
                 + x_769
                 - x_89 * (x_666 * x_676 + x_674 * x_9 + x_677 * x_9)
-            ],
-            [
+            ,
+            
                 9.628416e-5 * x_1 * x_12
                 + 0.0178304 * x_101
                 + 0.0077274676 * x_105 * x_173
@@ -2750,8 +2750,8 @@ def coriolis(joint_position, joint_velocity):
                 + 0.0028405095497008 * x_95
                 - 0.0034465095497008 * x_96
                 - 0.0028405095497008 * x_98
-            ],
-            [
+            ,
+            
                 -0.00208866816 * x_1 * x_684
                 + x_109 * x_676
                 + x_109 * x_881
@@ -2882,8 +2882,8 @@ def coriolis(joint_position, joint_velocity):
                 - 0.08590526315144 * x_95
                 + 0.09422126315144 * x_96
                 + 0.08590526315144 * x_98
-            ],
-            [
+            ,
+            
                 -x_109 * x_146 * x_792
                 + x_109 * (x_379 * x_920 + x_469 * x_922 + x_479 * x_923)
                 + x_112 * (0.009432 * x_144 * x_69 - x_146 * x_365)
@@ -2980,8 +2980,8 @@ def coriolis(joint_position, joint_velocity):
                 + x_643 * x_652
                 - x_647 * x_931
                 - 0.00965 * x_777
-            ],
-            [
+            ,
+            
                 x_109 * (0.1059 * x_144 * x_196 * x_69 - x_830)
                 + x_109 * (x_379 * x_932 + x_469 * x_936 - x_479 * x_937)
                 + x_112
@@ -3055,8 +3055,8 @@ def coriolis(joint_position, joint_velocity):
                 + 0.00700998583062 * x_570
                 + 0.0002975816241 * x_575
                 + x_625 * x_932
-            ],
-            [
+            ,
+            
                 -0.000169878398 * joint_velocity[0] * x_587
                 - 0.000169878398 * joint_velocity[1] * x_586
                 - 0.000169878398 * joint_velocity[2] * x_583
@@ -3139,6 +3139,6 @@ def coriolis(joint_position, joint_velocity):
                 - x_662
                 - x_663
                 - x_664
-            ],
+            ,
         ]
     )
