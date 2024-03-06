@@ -1,6 +1,6 @@
 [project]
 name = "pyKinovaGen3"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="Ozan Tokatli", email="ozan.tokatli@gmail.com" },
 ]
