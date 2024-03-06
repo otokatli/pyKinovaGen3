@@ -10,7 +10,7 @@ manipulability_gradient(joint_position)
 import numpy as np
 from numpy.linalg import det
 from scipy.optimize import approx_fprime
-from .jacobian import jacobian
+from kinova_gen3.kinematics.jacobian import jacobian
 
 
 def manipulability(joint_position):

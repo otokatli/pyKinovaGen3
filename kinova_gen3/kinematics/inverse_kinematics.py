@@ -11,8 +11,8 @@ multicriteria_ik_damped(joint_position, end_effector_vel)
 
 import numpy as np
 from .jacobian import jacobian
-from .manipulability import manipulability_gradient
-from .joint_limits import joint_limits_gradient
+from performance_criteria.manipulability import manipulability_gradient
+from performance_criteria.joint_limits import joint_limits_gradient
 
 
 def inverse_kinematics(joint_position, end_effector_vel):
