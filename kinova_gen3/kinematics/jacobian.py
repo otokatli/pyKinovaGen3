@@ -144,7 +144,7 @@ def jacobian(q):
     x110 = x29 - x89
     x111 = x107 + x48
 
-    analytical_jacobian = numpy.array(
+    geometric_jacobian = numpy.array(
         [
             [
                 -0.01175 * x0
@@ -267,4 +267,4 @@ def jacobian(q):
         ]
     )
 
-    return analytical_jacobian
+    return geometric_jacobian
